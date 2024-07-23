@@ -15,7 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
   final TextEditingController confirm = TextEditingController();
-
   final TextEditingController country = TextEditingController();
   final TextEditingController city = TextEditingController();
   final TextEditingController postalCode = TextEditingController();
@@ -173,28 +172,31 @@ class _HomeScreenState extends State<HomeScreen> {
             _activeStepIndex = index;
           });
         },
-        controlsBuilder: (BuildContext, context,
-            {onStepContinue, onStepCancel}) {
-          final isLastStep = _activeStepIndex == stepList().length - 1;
-          return Row(
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: onStepContinue,
-                  child:
-                      (isLastStep) ? const Text('Submit') : const Text('Next'),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              if (_activeStepIndex > 0)
-                Expanded(
-                    child: ElevatedButton(
-                        onPressed: onStepCancel, child: const Text('Back'))),
-            ],
-          );
-        },
+        // controlsBuilder: (dynamic, context, {onStepContinue, onStepCancel}) {
+        //   final isLastStep = _activeStepIndex == stepList().length - 1;
+        //   return Row(
+        //     children: [
+        //       Expanded(
+        //         child: ElevatedButton(
+        //           onPressed: onStepContinue,
+        //           child: (isLastStep)
+        //               ? const Text('Submit')
+        //               : const Text(
+        //                   'Next',
+        //                   style: TextStyle(color: Colors.blue),
+        //                 ),
+        //         ),
+        //       ),
+        //       const SizedBox(
+        //         height: 20,
+        //       ),
+        //       if (_activeStepIndex > 0)
+        //         Expanded(
+        //             child: ElevatedButton(
+        //                 onPressed: onStepCancel, child: const Text('Back'))),
+        //     ],
+        //   );
+        // },
       ),
     );
   }
