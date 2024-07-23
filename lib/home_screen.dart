@@ -171,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() {
             _activeStepIndex = index;
           });
-        },
+        }, // this code is in pandding
         // controlsBuilder: (dynamic, context, {onStepContinue, onStepCancel}) {
         //   final isLastStep = _activeStepIndex == stepList().length - 1;
         //   return Row(
